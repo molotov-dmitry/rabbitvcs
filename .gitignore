@@ -2,6 +2,7 @@
 *~
 rabbitvcs/buildinfo.py
 build/
+deb/
 dist/
 rabbitvcs.egg-info/
 .vscode
