@@ -8,7 +8,7 @@ PREFIX=/
 all:
 
 install: $(INSTALL_DIR)
-	python setup.py install --install-layout=deb --prefix=$(INSTALL_DIR) --root $(PREFIX)
+	python3 setup.py install --install-layout=deb --prefix=$(INSTALL_DIR) --root $(PREFIX)
 
 $(INSTALL_DIR):
 	mkdir -p $@
