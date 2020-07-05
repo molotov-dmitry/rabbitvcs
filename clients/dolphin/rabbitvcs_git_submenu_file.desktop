@@ -1,19 +1,19 @@
 [Desktop Entry]
 Type=Service
 ServiceTypes=KonqPopupMenu/Plugin,application/octet-stream
-Actions=Update;Commit;_SEPARATOR_;Changes;Log;Browser;CheckMods;_SEPARATOR_;EditConflicts;Resolve;UpdateToRev;Rename;Delete;Revert;GetLock;ReleaseLock;_SEPARATOR_;BranchTag;Switch;Merge;_SEPARATOR_;Annotate;_SEPARATOR_;CreatePatch;Properties;_SEPARATOR_;Add;Ignore;_SEPARATOR_;Settings;About;
+Actions=Checkout;Commit;_SEPARATOR_;Changes;Log;_SEPARATOR_;EditConflicts;Rename;Delete;Revert;Clean;Reset;_SEPARATOR_;Branches;Tags;Remotes;_SEPARATOR_;Export;Merge;_SEPARATOR_;Annotate;_SEPARATOR_;ApplyPatch;_SEPARATOR_;CreatePatch;Stage;Ignore;_SEPARATOR_;Settings;About;
 Icon=/usr/share/icons/hicolor/scalable/actions/rabbitvcs.svg
 
 X-KDE-Priority=TopLevel
-X-KDE-Submenu=RabbitVCS SVN
+X-KDE-Submenu=RabbitVCS Git
 
-[Desktop Action Update]
-Name=Update
-Name[de]=Aktualisieren
-Name[fr]=Mettre à jour
+[Desktop Action Checkout]
+Name=Checkout...
+Name[de]=Auschecken …
+Name[fr]=Check-out …
 
-Icon=/usr/share/icons/hicolor/scalable/actions/rabbitvcs-update.svg
-Exec=rabbitvcs update %U
+Icon=/usr/share/icons/hicolor/scalable/actions/rabbitvcs-checkout.svg
+Exec=rabbitvcs checkout %U
 
 [Desktop Action Commit]
 Name=Commit...
@@ -41,22 +41,6 @@ Name[pl]=Pokaz Log
 Icon=/usr/share/icons/hicolor/scalable/actions/rabbitvcs-show_log.svg
 Exec=rabbitvcs log %U
 
-[Desktop Action Browser]
-Name=Repo-browser
-Name[de]=Repository-Browser
-Name[fr]=Navigateur de dépôt
-
-Icon=/usr/share/icons/hicolor/scalable/actions/rabbitvcs-drive.svg
-Exec=rabbitvcs browser %U
-
-[Desktop Action CheckMods]
-Name=Check for modifications
-Name[de]=Auf Änderungen prüfen
-Name[fr]=Vérifier les modifications
-
-Icon=/usr/share/icons/hicolor/scalable/actions/rabbitvcs-checkmods.svg
-Exec=rabbitvcs checkmods %U
-
 # SEPARATOR
 
 [Desktop Action EditConflicts]
@@ -65,22 +49,6 @@ Name[fr]=Editer les conflits …
 
 Icon=/usr/share/icons/hicolor/scalable/actions/rabbitvcs-editconflicts.svg
 Exec=rabbitvcs editconflicts %U
-
-[Desktop Action Resolve]
-Name=Resolve...
-Name[de]=Konflikte lösen …
-Name[fr]=Résoudre les conflits …
-
-Icon=/usr/share/icons/hicolor/scalable/actions/rabbitvcs-resolve.svg
-Exec=rabbitvcs resolve %U
-
-[Desktop Action UpdateToRev]
-Name=Update to revision...
-Name[de]=Auf Revision aktualisieren …
-Name[fr]=Mettre à jour à la révision …
-
-Icon=/usr/share/icons/hicolor/scalable/actions/rabbitvcs-update.svg
-Exec=rabbitvcs updateto %U
 
 [Desktop Action Rename]
 Name=Rename...
@@ -106,39 +74,51 @@ Name[fr]=Rétablir …
 Icon=/usr/share/icons/hicolor/scalable/actions/rabbitvcs-revert.svg
 Exec=rabbitvcs revert %U
 
-[Desktop Action GetLock]
-Name=Get lock...
-Name[de]=Sperren …
-Name[fr]=Obtenir le verrou …
+[Desktop Action Clean]
+Name=Clean
+Name[fr]=Nettoyer
 
-Icon=/usr/share/icons/hicolor/scalable/actions/rabbitvcs-lock.svg
-Exec=rabbitvcs lock %U
+Exec=rabbitvcs clean %U
 
-[Desktop Action ReleaseLock]
-Name=Release lock...
-Name[de]=Sperrung aufheben …
-Name[fr]=Relâcher le verrou …
+[Desktop Action Reset]
+Name=Reset
+Name[fr]=Reset
 
-Icon=/usr/share/icons/hicolor/scalable/actions/rabbitvcs-unlock.svg
-Exec=rabbitvcs unlock %U
+Icon=/usr/share/icons/hicolor/scalable/actions/rabbitvcs-reset.svg
+Exec=rabbitvcs reset %U
 
 # SEPARATOR
 
-[Desktop Action BranchTag]
-Name=Branch/tag...
-Name[de]=Verzweigen/markieren …
-Name[fr]=Brancher/Taguer …
+[Desktop Action Branches]
+Name=Branches
+Name[fr]=Branches
 
 Icon=/usr/share/icons/hicolor/scalable/actions/rabbitvcs-branch.svg
-Exec=rabbitvcs branch %U
+Exec=rabbitvcs branches %U
 
-[Desktop Action Switch]
-Name=Switch...
-Name[de]=Wechseln …
-Name[fr]=Basculer …
+[Desktop Action Tags]
+Name=Tags
+Name[fr]=Tags
 
-Icon=/usr/share/icons/hicolor/scalable/actions/rabbitvcs-switch.svg
-Exec=rabbitvcs switch %U
+Icon=/usr/share/icons/hicolor/scalable/actions/rabbitvcs-branch.svg
+Exec=rabbitvcs tags %U
+
+[Desktop Action Remotes]
+Name=Remotes
+Name[fr]=Dépôts distants
+
+Icon=/usr/share/icons/hicolor/scalable/actions/rabbitvcs-checkmods.svg
+Exec=rabbitvcs remotes %U
+
+# SEPARATOR
+
+[Desktop Action Export]
+Name=Export...
+Name[de]=Exportieren …
+Name[fr]=Exporter …
+
+Icon=/usr/share/icons/hicolor/scalable/actions/rabbitvcs-export.svg
+Exec=rabbitvcs export %U
 
 [Desktop Action Merge]
 Name=Merge...
@@ -160,6 +140,17 @@ Exec=rabbitvcs annotate %U
 
 # SEPARATOR
 
+[Desktop Action ApplyPatch]
+Name=Apply patch...
+Name[de]=Patch anwenden …
+Name[fr]=Appliquer un correctif …
+Name[pl]=Zastosuj Patch...
+
+Icon=/usr/share/icons/hicolor/scalable/actions/rabbitvcs-applypatch.svg
+Exec=rabbitvcs applypatch %U
+
+# SEPARATOR
+
 [Desktop Action CreatePatch]
 Name=Create patch...
 Name[de]=Patch erstellen …
@@ -168,17 +159,7 @@ Name[fr]=Créer un correctif …
 Icon=/usr/share/icons/hicolor/scalable/actions/rabbitvcs-createpatch.svg
 Exec=rabbitvcs createpatch %U
 
-[Desktop Action Properties]
-Name=Properties
-Name[de]=Eigenschaften
-Name[fr]=Propriétés
-
-Icon=/usr/share/icons/hicolor/scalable/actions/rabbitvcs-properties.svg
-Exec=rabbitvcs properties %U
-
-# SEPARATOR
-
-[Desktop Action Add]
+[Desktop Action Stage]
 Name=Add...
 Name[de]=Hinzufuegen …
 Name[fr]=Ajouter …
