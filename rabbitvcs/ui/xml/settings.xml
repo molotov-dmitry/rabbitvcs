@@ -140,7 +140,7 @@
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="hexpand">True</property>
-                        <property name="label" translatable="yes">&lt;b&gt;Version Control Systems&lt;/b&gt;</property>
+                        <property name="label" translatable="yes">&lt;b&gt;Version Control Systems (File manager restart required)&lt;/b&gt;</property>
                         <property name="use_markup">True</property>
                         <property name="xalign">0</property>
                       </object>
