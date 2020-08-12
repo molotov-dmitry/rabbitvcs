@@ -100,6 +100,9 @@ class Settings(InterfaceView):
         self.get_widget("enable_git").set_active(
             int(self.settings.get("HideItem", "git")) == 0
         )
+        self.get_widget("enable_hg").set_active(
+            int(self.settings.get("HideItem", "hg")) == 0
+        )
         dtfs = []
         dt = datetime.datetime.today()
         # Disambiguate day.
@@ -312,6 +315,10 @@ class Settings(InterfaceView):
         self.settings.set(
             "HideItem", "git",
             not self.get_widget("enable_git").get_active()
+        )
+        self.settings.set(
+            "HideItem", "hg",
+            not self.get_widget("enable_hg").get_active()
         )
         self.settings.set_multiline(
             "general", "default_commit_message",
